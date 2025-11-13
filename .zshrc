@@ -1,8 +1,21 @@
 
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+[[ -f ~/.zsh/zinit.zsh ]] && source ~/.zsh/zinit.zsh
 
 eval "$(starship init zsh)"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Starting MacOS config..."
+
+    export COLORTERM=truecolor
+    export TERM=xterm-256color
+    export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo "Starting Linux config..."
+
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
