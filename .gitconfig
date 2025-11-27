@@ -5,3 +5,12 @@
 	graph = log --graph --all --date=format-local:\"%d/%m/%y %H:%M:%S\" --pretty=format:\"--%C(auto)%d %C(cyan)%h %C(white)%<(50,trunc)%s%n   %C(dim white)%an - %ad%n\"
 [push]
 	autoSetupRemote = true
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+[merge]
+	conflictStyle = zdiff3
