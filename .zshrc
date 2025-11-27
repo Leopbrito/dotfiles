@@ -1,6 +1,4 @@
-
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
-[[ -f ~/.zsh/zinit.zsh ]] && source ~/.zsh/zinit.zsh
 
 eval "$(starship init zsh)"
 
@@ -21,6 +19,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Starting Linux config..."
 
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
