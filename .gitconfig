@@ -2,15 +2,18 @@
 	name = Leonardo Brito
 	email = leopbrito@icloud.com
 [alias]
-	graph = log --graph --all --date=format-local:\"%d/%m/%y %H:%M:%S\" --pretty=format:\"--%C(auto)%d %C(cyan)%h %C(white)%<(50,trunc)%s%n   %C(dim white)%an - %ad%n\"
+	graph = log --graph --all --date=format-local:\"%d/%m/%y %H:%M:%S\" --pretty=format:\"--%C(auto)%d %C(cyan)%h %C(white)%s%n   %C(dim white)%an - %ad%n\"
 [push]
 	autoSetupRemote = true
 [core]
-	pager = delta
+	pager = delta --paging=always --pager=moor
 [interactive]
 	diffFilter = delta --color-only
 [delta]
 	navigate = true
 	side-by-side = true
+    syntax-theme = Visual Studio Dark+
+    line-numbers = true
+    hunk-header-style = omit
 [merge]
 	conflictStyle = zdiff3

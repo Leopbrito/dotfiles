@@ -23,6 +23,9 @@ brew install git
 magenta "Installing git-delta"
 brew install git-delta
 
+magenta "Installing moor"
+brew install moor
+
 magenta "Installing yadm"
 brew install yadm
 
